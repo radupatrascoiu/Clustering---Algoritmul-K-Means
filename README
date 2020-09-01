@@ -1,0 +1,28 @@
+// Patrascoiu Ion - Radu, 312 CD
+
+In cadrul acestei teme am implementat urmatoarele functii:
+
+1.read_input_data: citeste din fisier NC, numarul de centroizi, si matricea
+points. Am folosit functia load.
+
+2.clustering_pc: calculueaza coordonatele a NC puncte in spatiu (centroizi).
+Am ales aleator cetroizii cu ajutorul functiei randperm, apoi am initializat o
+matrice 'initial' care va reprezenta centroidul inainte de recalculare.
+Am parcurs punctele si centroizii, am calculat minumul distantei euclidiene si
+am retinul indicele centroidului respectiv. Am creat o noua matrice 'group',
+unde am adaugat pe primele 3 coloane coordonatele punctelor, iar pe cea de-a
+patra am pus indicele centroidului. Am recalculat centroizii, de un numar
+repetabil de ori, pana cand diferenta dintre centroizii initiali si cei
+recalculati este foarte mica.
+
+3.view_clusters: reprezinta grafic punctele. Folosesc functia hsv, care
+genereaza un vector de NC culori. Pentru reprezentare folosesc functiile
+scatter3, hold on si hold off. Pentru frumusestea vizualizarii folosesc view.
+
+4.compute_cost_pc: calculeaza costul unui cluster. Am calculat suma distantelor
+de la centroid la fiecare din punctele ce apartin clusterului respectiv, acesta
+fiind costul.
+
+5.view_cost_vs_nc: reprezinta grafic costul. Am initializat 2 vectori x si y,
+reprezentand axele graficului. In x am pus numerele {1...10}, iar in y costul
+corespunzator fiecarui x. Pentru reprezentare am folosit functia plot.
